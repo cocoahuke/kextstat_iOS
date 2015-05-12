@@ -17,7 +17,8 @@ CFDictionaryRef (*OSKextCopyLoadedKextInfo)(CFArrayRef,CFArrayRef);
 
 int main (int argc, const char * argv[])
 {
-    void *handle = dlopen(" /System/Library/Frameworks/IOKit.framework/IOKit",RTLD_LAZY);
+    void *handle = dlopen("write your IOKit Executable files path.from iOS framework cache",RTLD_LAZY);///System/Library/Frameworks/IOKit.framework/IOKit
+    //write your IOKit Executable files path.from iOS framework cache
     void *fcn = dlsym(handle,"OSKextCopyLoadedKextInfo");
     if(fcn!=NULL){
         OSKextCopyLoadedKextInfo = (CFDictionaryRef (*)(CFArrayRef,CFArrayRef))fcn;
